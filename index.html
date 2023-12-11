@@ -3,14 +3,19 @@
     <head>
         <link rel="manifest" href="/web-sdk-test/manifest.json">
         <script type="text/javascript">
-            var clevertap = { event: [], profile: [], account: [], region: 'sk1-staging-17' };
- 		             clevertap.account.push({ id: "WR5-Z98-W56Z" }); // QA Champs      
+            var clevertap = { event: [], profile: [], account: [], region: 'sk1' };
+ 	//	             clevertap.account.push({ id: "WR5-Z98-W56Z" }); // QA Champs      
 	//	             clevertap.account.push({ id: "W88-4K6-646Z" }); // WCC Team      
 	//	              clevertap.account.push({ id: "W48-KW4-656Z" }); // WCC Team returns   
 //             clevertap.account.push({ id: "RK4-898-W85Z" }); // WA rollout qa
-               //clevertap.account.push({ id: "WRK-485-456Z" }); // Web Testing RK8-84W-K66Z
+               clevertap.account.push({ id: "WRK-485-456Z" }); // Web Testing RK8-84W-K66Z
 //		clevertap.account.push({ id: "RK8-84W-K66Z" }); // NPS Test 
-
+ clevertap.privacy.push({
+            optOut: false
+        }); //set the flag to true, if the user of the device opts out of sharing their data
+        clevertap.privacy.push({
+            useIP: false
+        });
 
             (function() {
                 var wzrk = document.createElement("script");
@@ -24,7 +29,7 @@
 		    //    wzrk.src = 'https://cdn.jsdelivr.net/gh/CleverTap/clevertap-web-sdk@task/SDK-2678/frequency_caps/clevertap.js';
 		//    wzrk.src = 'https://cdn.jsdelivr.net/gh/CleverTap/clevertap-web-sdk@task/SDK-2521/popup_imageonly/clevertap.js';
 	// wzrk.src = 'https://cdn.jsdelivr.net/gh/CleverTap/clevertap-web-sdk@task/SDK-2041/web_inbox/clevertap.js'
-                var s = document.getElementsByTagName("script")[0];
+                var s = document.getElementsByTagName('script')[0];
                 s.parentNode.insertBefore(wzrk, s);
             })();
         </script>
@@ -257,6 +262,7 @@ function renderCartDropOffPersonalisationCampaign (data) {
   </script>
               
         <link rel="stylesheet" href="/web-sdk-test/style.css" />
+	<a href="https://pragya1208.github.io/InboxTest/" style = "color: white">Click Me for referral</a>
         <!-- <br />
         <button type="button" onclick="pushprofile()">Profile Push!</button>
         <br />
